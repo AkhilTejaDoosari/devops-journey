@@ -1,9 +1,9 @@
 # Day 1 — Containers
 
-**Date:** April 19 2026
-**Read before session:** [03-docker-containers](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/03-docker-containers)
-**App reference:** [ShopStack](https://github.com/AkhilTejaDoosari/shopstack)
-**Goal:** Pull images, run containers, enter them, inspect them, log them, stop them, delete them. Feel the difference between an image and a container with your own hands.
+**Date:** April 19 2026   
+**Read before session:** [03-docker-containers](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/03-docker-containers)   
+**App reference:** [ShopStack](https://github.com/AkhilTejaDoosari/shopstack)   
+**Goal:** Pull images, run containers, enter them, inspect them, log them, stop them, delete them. Feel the difference between an image and a container with your own hands.   
 
 ---
 

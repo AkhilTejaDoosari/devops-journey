@@ -1,9 +1,9 @@
 # Day 2 — Ports and Networking
 
-**Date:** April 20 2026
-**Read before session:** [04-docker-port-binding](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/04-docker-port-binding) · [05-docker-networking](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/05-docker-networking)
-**App reference:** [ShopStack](https://github.com/AkhilTejaDoosari/shopstack)
-**Goal:** Bind ports, create networks, prove Docker DNS resolves container names automatically.
+**Date:** April 20 2026   
+**Read before session:** [04-docker-port-binding](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/04-docker-port-binding)    · [05-docker-networking](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/05-docker-networking)   
+**App reference:** [ShopStack](https://github.com/AkhilTejaDoosari/shopstack)   
+**Goal:** Bind ports, create networks, prove Docker DNS resolves container names automatically.   
 
 ---
 

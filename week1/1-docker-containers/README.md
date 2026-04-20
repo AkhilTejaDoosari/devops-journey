@@ -7,46 +7,6 @@
 
 ---
 
-## Checklist
-
-- [x] `docker -v` — confirm Docker is installed
-- [x] `docker pull ubuntu` — pull without tag
-- [x] `docker pull ubuntu:22.04` — pull with specific tag
-- [x] `docker pull nginx:1.24` — pull the frontend image
-- [x] `docker images` — read every column out loud: REPOSITORY, TAG, IMAGE ID, SIZE
-- [x] `docker run --name ubuntu-test -it ubuntu:22.04` — enter container interactively
-- [x] Inside container: `whoami` `hostname` `ls /` `cat /etc/os-release`
-- [x] Inside container: `echo "I was here" > /tmp/test.txt`
-- [x] `exit` — leave the container
-- [x] `docker ps` — notice ubuntu-test is NOT here
-- [x] `docker ps -a` — it is here, status Exited
-- [x] `docker start -i ubuntu-test` — re-enter same container
-- [x] `cat /tmp/test.txt` — file survived stop and start
-- [x] `exit`
-- [x] `docker run -d --name nginx -p 8090:80 nginx:1.24` — run as service
-- [x] `docker ps` — confirm running, read PORTS column
-- [x] Open browser — `http://18.219.143.12:8090` — nginx welcome page
-- [x] `docker logs nginx` — see nginx startup logs
-- [x] `docker logs -f nginx` — follow live, refresh browser, watch new line appear
-- [x] `Ctrl+C` — stop following logs
-- [x] `docker inspect nginx | grep -A 5 "Ports"` — find port mapping
-- [x] `docker inspect nginx | grep "IPAddress"` — find container IP
-- [x] `docker inspect nginx | grep "Image"` — find image name
-- [x] `docker exec -it nginx /bin/sh` — enter running container
-- [x] Inside: `ls /usr/share/nginx/html/` — see the default index.html
-- [x] `exit`
-- [x] `docker stop nginx`
-- [x] `docker stop ubuntu-test`
-- [x] `docker ps` — gone from running
-- [x] `docker ps -a` — still exists, status Exited
-- [x] `docker rm nginx`
-- [x] `docker rm ubuntu-test`
-- [x] `docker rmi nginx:1.24 ubuntu:22.04 ubuntu:latest`
-- [x] `docker images` — confirm clean
-- [x] `docker ps -a` — confirm clean
-
----
-
 ## Knowledge — What These Topics Are Really About
 
 ### Images
@@ -245,12 +205,40 @@ docker network ls # should show only bridge, host, none
 
 ---
 
-## What I Did Differently From the Checklist
+## Checklist
 
-- Used `nginx` as container name instead of `webstore-frontend` — avoid conflicts with ShopStack
-- Used port `8090` instead of `8080` — port 8080 is already used by ShopStack API
-- Used vim first — not installed — solved it with `echo` — good instinct
-
----
-
-**Status: ✅ Done — April 19 2026**
+- ✅ `docker -v` — confirm Docker is installed
+- ✅ `docker pull ubuntu` — pull without tag
+- ✅ `docker pull ubuntu:22.04` — pull with specific tag
+- ✅ `docker pull nginx:1.24` — pull the frontend image
+- ✅ `docker images` — read every column out loud: REPOSITORY, TAG, IMAGE ID, SIZE
+- ✅ `docker run --name ubuntu-test -it ubuntu:22.04` — enter container interactively
+- ✅ Inside container: `whoami` `hostname` `ls /` `cat /etc/os-release`
+- ✅ Inside container: `echo "I was here" > /tmp/test.txt`
+- ✅ `exit` — leave the container
+- ✅ `docker ps` — notice ubuntu-test is NOT here
+- ✅ `docker ps -a` — it is here, status Exited
+- ✅ `docker start -i ubuntu-test` — re-enter same container
+- ✅ `cat /tmp/test.txt` — file survived stop and start
+- ✅ `exit`
+- ✅ `docker run -d --name nginx -p 8090:80 nginx:1.24` — run as service
+- ✅ `docker ps` — confirm running, read PORTS column
+- ✅ Open browser — `http://18.219.143.12:8090` — nginx welcome page
+- ✅ `docker logs nginx` — see nginx startup logs
+- ✅ `docker logs -f nginx` — follow live, refresh browser, watch new line appear
+- ✅ `Ctrl+C` — stop following logs
+- ✅ `docker inspect nginx | grep -A 5 "Ports"` — find port mapping
+- ✅ `docker inspect nginx | grep "IPAddress"` — find container IP
+- ✅ `docker inspect nginx | grep "Image"` — find image name
+- ✅ `docker exec -it nginx /bin/sh` — enter running container
+- ✅ Inside: `ls /usr/share/nginx/html/` — see the default index.html
+- ✅ `exit`
+- ✅ `docker stop nginx`
+- ✅ `docker stop ubuntu-test`
+- ✅ `docker ps` — gone from running
+- ✅ `docker ps -a` — still exists, status Exited
+- ✅ `docker rm nginx`
+- ✅ `docker rm ubuntu-test`
+- ✅ `docker rmi nginx:1.24 ubuntu:22.04 ubuntu:latest`
+- ✅ `docker images` — confirm clean
+- ✅ `docker ps -a` — confirm clean

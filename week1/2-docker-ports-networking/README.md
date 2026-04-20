@@ -7,32 +7,6 @@
 
 ---
 
-## Checklist
-
-- [x] `docker run -d --name webstore-frontend -p 8080:80 nginx:1.24`
-- [x] Open `http://EC2_IP:8080` — nginx welcome page loads
-- [x] `docker run -d --name webstore-api -p 8081:80 nginx:1.24`
-- [x] `docker ps` — read PORTS column for both containers
-- [x] `docker stop webstore-frontend webstore-api`
-- [x] `docker rm webstore-frontend webstore-api`
-- [x] `docker network create webstore-network`
-- [x] `docker network ls` — confirm webstore-network exists
-- [x] `docker run -d --name webstore-db --network webstore-network -e POSTGRES_DB=webstore -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=secret postgres:15`
-- [x] `docker run -d --name adminer --network webstore-network -p 8081:8080 adminer`
-- [x] Open `http://EC2_IP:8081` — Adminer UI loads
-- [x] Login — system: PostgreSQL, server: `webstore-db`, user: admin, pass: secret, db: webstore
-- [x] `docker exec -it adminer /bin/sh`
-- [x] Inside: `ping webstore-db` — resolves by name
-- [x] Inside: `cat /etc/resolv.conf` — confirmed `nameserver 127.0.0.11`
-- [x] `exit`
-- [x] `docker network inspect webstore-network` — read container IPs
-- [x] `docker stop adminer webstore-db`
-- [x] `docker rm adminer webstore-db`
-- [x] `docker network rm webstore-network`
-- [x] `docker rmi postgres:15 adminer:latest nginx:1.24`
-
----
-
 ## Knowledge — What These Topics Are Really About
 
 ### Port Binding
@@ -180,3 +154,29 @@ docker ps --format "table {{.Names}}\t{{.Ports}}"
 4. Docker DNS is `127.0.0.11` — configured automatically, no manual setup needed
 5. Containers on different networks cannot see each other — ShopStack uses this for security isolation
 6. Database never needs `-p` — internal only, other containers reach it by name on the shared network
+
+---
+
+## Checklist
+
+- ✅ `docker run -d --name webstore-frontend -p 8080:80 nginx:1.24`
+- ✅ Open `http://EC2_IP:8080` — nginx welcome page loads
+- ✅ `docker run -d --name webstore-api -p 8081:80 nginx:1.24`
+- ✅ `docker ps` — read PORTS column for both containers
+- ✅ `docker stop webstore-frontend webstore-api`
+- ✅ `docker rm webstore-frontend webstore-api`
+- ✅ `docker network create webstore-network`
+- ✅ `docker network ls` — confirm webstore-network exists
+- ✅ `docker run -d --name webstore-db --network webstore-network -e POSTGRES_DB=webstore -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=secret postgres:15`
+- ✅ `docker run -d --name adminer --network webstore-network -p 8081:8080 adminer`
+- ✅ Open `http://EC2_IP:8081` — Adminer UI loads
+- ✅ Login — system: PostgreSQL, server: `webstore-db`, user: admin, pass: secret, db: webstore
+- ✅ `docker exec -it adminer /bin/sh`
+- ✅ Inside: `ping webstore-db` — resolves by name
+- ✅ Inside: `cat /etc/resolv.conf` — confirmed `nameserver 127.0.0.11`
+- ✅ `exit`
+- ✅ `docker network inspect webstore-network` — read container IPs
+- ✅ `docker stop adminer webstore-db`
+- ✅ `docker rm adminer webstore-db`
+- ✅ `docker network rm webstore-network`
+- ✅ `docker rmi postgres:15 adminer:latest nginx:1.24`

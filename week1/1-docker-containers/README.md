@@ -33,73 +33,73 @@ ShopStack runs 5 containers from a `docker compose up` command. Every one of tho
 
 ### Images
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `docker pull IMAGE` | Pull with latest tag |
-| `docker pull IMAGE:TAG` | Pull specific version |
-| `docker images` | List all images on this machine |
-| `docker rmi IMAGE:TAG` | Delete one image |
-| `docker rmi IMAGE1 IMAGE2 IMAGE3` | Delete multiple images at once |
+| Pull with latest tag | `docker pull IMAGE` |
+| Pull specific version | `docker pull IMAGE:TAG` |
+| List all images on this machine | `docker images` |
+| Delete one image | `docker rmi IMAGE:TAG` |
+| Delete multiple images at once | `docker rmi IMAGE1 IMAGE2 IMAGE3` |
 
 ### Running Containers
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `docker run IMAGE` | Run foreground — blocks terminal |
-| `docker run -it IMAGE` | Run interactively — enter the shell |
-| `docker run -d IMAGE` | Run in background — detached |
-| `docker run --name NAME IMAGE` | Give the container a name |
-| `docker run -p HOST:CONTAINER IMAGE` | Bind EC2 port to container port |
-| `docker run -d --name NAME -p HOST:CONTAINER IMAGE` | Full background service run |
-| `docker run -e KEY=VALUE IMAGE` | Pass environment variable at startup |
+| Run foreground — blocks terminal | `docker run IMAGE` |
+| Run interactively — enter the shell | `docker run -it IMAGE` |
+| Run in background — detached | `docker run -d IMAGE` |
+| Give the container a name | `docker run --name NAME IMAGE` |
+| Bind host port to container port | `docker run -p HOST:CONTAINER IMAGE` |
+| Full background service run | `docker run -d --name NAME -p HOST:CONTAINER IMAGE` |
+| Pass environment variable at startup | `docker run -e KEY=VALUE IMAGE` |
 
 ### Managing Containers
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `docker ps` | Show running containers only |
-| `docker ps -a` | Show all containers including stopped |
-| `docker start NAME` | Start a stopped container |
-| `docker start -i NAME` | Start a stopped container and enter it |
-| `docker stop NAME` | Stop a running container |
-| `docker stop NAME1 NAME2` | Stop multiple at once |
-| `docker rm NAME` | Delete a stopped container |
-| `docker rm NAME1 NAME2` | Delete multiple at once |
-| `docker restart NAME` | Stop and start without rebuilding |
+| Show running containers only | `docker ps` |
+| Show all containers including stopped | `docker ps -a` |
+| Start a stopped container | `docker start NAME` |
+| Start a stopped container and enter it | `docker start -i NAME` |
+| Stop a running container | `docker stop NAME` |
+| Stop multiple at once | `docker stop NAME1 NAME2` |
+| Delete a stopped container | `docker rm NAME` |
+| Delete multiple at once | `docker rm NAME1 NAME2` |
+| Stop and start without rebuilding | `docker restart NAME` |
 
 ### Logs
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `docker logs NAME` | See all logs from the container |
-| `docker logs -f NAME` | Follow logs live — Ctrl+C to stop |
-| `docker logs --tail 50 NAME` | See last 50 lines only |
-| `docker logs --previous NAME` | Logs from before the last restart |
+| See all logs from the container | `docker logs NAME` |
+| Follow logs live — Ctrl+C to stop | `docker logs -f NAME` |
+| See last 50 lines only | `docker logs --tail 50 NAME` |
+| Logs from before the last restart | `docker logs --previous NAME` |
 
 ### Inspect
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `docker inspect NAME` | Full container config — everything |
-| `docker inspect NAME \| grep -A 5 "Ports"` | Find port mapping |
-| `docker inspect NAME \| grep "IPAddress"` | Find container internal IP |
-| `docker inspect NAME \| grep "Image"` | Find which image is running |
+| Full container config — everything | `docker inspect NAME` |
+| Find port mapping | `docker inspect NAME \| grep -A 5 "Ports"` |
+| Find container internal IP | `docker inspect NAME \| grep "IPAddress"` |
+| Find which image is running | `docker inspect NAME \| grep "Image"` |
 
 ### Exec — Enter Running Container
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `docker exec -it NAME /bin/sh` | Enter container — always works |
-| `docker exec -it NAME /bin/bash` | Enter container — ubuntu/debian only |
-| `docker exec NAME COMMAND` | Run one command inside without entering |
+| Enter container — always works | `docker exec -it NAME /bin/sh` |
+| Enter container — ubuntu/debian only | `docker exec -it NAME /bin/bash` |
+| Run one command inside without entering | `docker exec NAME COMMAND` |
 
 ### Grep Flags
 
-| Flag | What it does |
+| What it does | Flag |
 |---|---|
-| `-A 5` | Show 5 lines After the match |
-| `-B 5` | Show 5 lines Before the match |
-| `-C 5` | Show 5 lines on both sides (Context) |
+| Show 5 lines After the match | `-A 5` |
+| Show 5 lines Before the match | `-B 5` |
+| Show 5 lines on both sides (Context) | `-C 5` |
 
 ### Cleanup Order — Memorize This
 

@@ -45,32 +45,32 @@ Browser → frontend (infra_frontend) → api (infra_frontend + infra_backend) �
 
 ### Port Binding
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `docker run -p 8080:80 IMAGE` | Bind host port 8080 to container port 80 |
-| `docker ps` | See PORTS column — active bindings |
-| `docker port CONTAINER` | Show all port mappings for one container |
-| `sudo ss -tlnp \| grep 8080` | Find what process owns host port 8080 |
-| `docker inspect CONTAINER \| grep -A 5 Ports` | Full port binding detail |
-| `sudo iptables -t nat -L DOCKER -n` | Show DNAT rules Docker created — one per `-p` flag |
+| Bind host port to container port | `docker run -p HOST:CONTAINER IMAGE` |
+| See PORTS column — active bindings | `docker ps` |
+| Show all port mappings for one container | `docker port CONTAINER` |
+| Find what process owns a host port | `sudo ss -tlnp \| grep PORT` |
+| Full port binding detail | `docker inspect CONTAINER \| grep -A 5 Ports` |
+| Show DNAT rules Docker created — one per `-p` flag | `sudo iptables -t nat -L DOCKER -n` |
 
 ### Networking
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `docker network create NAME` | Create a named bridge network with DNS |
-| `docker network ls` | List all networks on this host |
-| `docker network inspect NAME` | Show all containers on network and their IPs |
-| `docker network rm NAME` | Delete a network — containers must be removed first |
-| `docker run --network NAME IMAGE` | Attach container to a named network at startup |
+| Create a named bridge network with DNS | `docker network create NAME` |
+| List all networks on this host | `docker network ls` |
+| Show all containers on network and their IPs | `docker network inspect NAME` |
+| Delete a network — containers must be removed first | `docker network rm NAME` |
+| Attach container to a named network at startup | `docker run --network NAME IMAGE` |
 
 ### DNS Verification (inside container)
 
-| Command | What it does |
+| What it does | Command |
 |---|---|
-| `cat /etc/resolv.conf` | Confirm DNS server is `127.0.0.11` |
-| `ping CONTAINER_NAME` | Test DNS resolution by name |
-| `nslookup CONTAINER_NAME` | Full DNS lookup — shows server and resolved IP |
+| Confirm DNS server is `127.0.0.11` | `cat /etc/resolv.conf` |
+| Test DNS resolution by name | `ping CONTAINER_NAME` |
+| Full DNS lookup — shows server and resolved IP | `nslookup CONTAINER_NAME` |
 
 ---
 

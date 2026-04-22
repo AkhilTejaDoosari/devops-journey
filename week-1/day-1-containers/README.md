@@ -1,5 +1,7 @@
 # Day 1 — Containers
 
+[1. Containers](../day-1-containers/readme.md) · [2. Ports & Networking](../day-2-networking/readme.md) · [3. Volumes](../day-3-volumes/readme.md)
+
 **Date:** April 19 2026
 **Read before session:** [03-docker-containers](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/03-docker-containers)
 **App reference:** [ShopStack](https://github.com/AkhilTejaDoosari/shopstack)
@@ -186,3 +188,7 @@ docker inspect webstore-frontend | grep -A 5 "Ports"
 - ✅ `docker ps -a` — confirm clean
 
 **Session win condition:** You can pull, run, enter, inspect, log, stop, and remove without looking at notes.
+
+---
+
+Ready to test yourself? → [Test](./test.md)

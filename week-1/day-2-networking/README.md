@@ -1,9 +1,11 @@
 # Day 2 — Ports and Networking
 
-**Date:** April 20 2026
-**Read before session:** [04-docker-port-binding](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/04-docker-port-binding) · [05-docker-networking](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/05-docker-networking)
-**App reference:** [ShopStack](https://github.com/AkhilTejaDoosari/shopstack)
-**Goal:** Bind ports, create networks, prove Docker DNS resolves container names automatically.
+[1. Containers](../day-1-containers/readme.md) · [2. Ports & Networking](../day-2-networking/readme.md) · [3. Volumes](../day-3-volumes/readme.md)
+
+**Date:** April 20 2026   
+**Read before session:** [04-docker-port-binding](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/04-docker-port-binding) · [05-docker-networking](https://github.com/AkhilTejaDoosari/devops-runbook/tree/main/notes/04.%20Docker%20%E2%80%93%20Containerization/05-docker-networking)   
+**App reference:** [ShopStack](https://github.com/AkhilTejaDoosari/shopstack)   
+**Goal:** Bind ports, create networks, prove Docker DNS resolves container names automatically.   
 
 ---
 
@@ -166,3 +168,7 @@ docker run -d \
 - ✅ `docker rmi postgres:15 adminer:latest nginx:1.24`
 
 **Session win condition:** Two containers on the same network talk by name. You can explain Docker DNS.
+
+---
+
+Ready to test yourself? → [Test](./test.md)

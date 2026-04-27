@@ -364,46 +364,46 @@ CMD ["./worker"]
 
 ## Checklist
 
-- [ ] Open `services/api/src/main.py` — read it, understand what it does
-- [ ] Open `services/api/requirements.txt` — read it
-- [ ] Write `services/api/Dockerfile` from scratch — no copy paste:
-  - [ ] `FROM python:3.12-slim`
-  - [ ] `WORKDIR /app`
-  - [ ] `COPY requirements.txt .`
-  - [ ] `RUN pip install --no-cache-dir -r requirements.txt`
-  - [ ] `COPY src/ .`
-  - [ ] `EXPOSE 8080`
-  - [ ] `CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]`
-- [ ] `docker build -t shopstack-api ./services/api`
-- [ ] `docker images` — confirm shopstack-api exists
-- [ ] `docker history shopstack-api` — read every layer
-- [ ] Add a comment to `main.py` — rebuild — watch pip install use cache
-- [ ] Change `requirements.txt` — rebuild — watch pip install rerun
-- [ ] Understand why: stable layers first, volatile layers last
-- [ ] Write `services/frontend/Dockerfile` from scratch:
-  - [ ] `FROM nginx:1.24-alpine`
-  - [ ] `RUN rm /etc/nginx/conf.d/default.conf`
-  - [ ] `COPY nginx.conf /etc/nginx/conf.d/default.conf`
-  - [ ] `COPY html/ /usr/share/nginx/html/`
-  - [ ] `EXPOSE 80`
-- [ ] `docker build -t shopstack-frontend ./services/frontend`
-- [ ] `docker images` — confirm shopstack-frontend exists
-- [ ] Write `services/worker/Dockerfile` from scratch — multi-stage:
-  - [ ] `FROM golang:1.22-alpine AS builder`
-  - [ ] `WORKDIR /build`
-  - [ ] `COPY go.mod .`
-  - [ ] `RUN go mod download`
-  - [ ] `COPY . .`
-  - [ ] `ARG TARGETARCH`
-  - [ ] `RUN CGO_ENABLED=0 GOOS=linux GOARCH=${TARGETARCH} go build -o worker .`
-  - [ ] `FROM alpine:3.19`
-  - [ ] `RUN apk --no-cache add ca-certificates`
-  - [ ] `WORKDIR /app`
-  - [ ] `COPY --from=builder /build/worker .`
-  - [ ] `CMD ["./worker"]`
-- [ ] `docker build -t shopstack-worker ./services/worker`
-- [ ] `docker images` — compare shopstack-worker size vs golang:1.22-alpine size
-- [ ] Answer out loud: what is a multi-stage build and why use it?
+- ✅ Open `services/api/src/main.py` — read it, understand what it does
+- ✅ Open `services/api/requirements.txt` — read it
+- ✅ Write `services/api/Dockerfile` from scratch — no copy paste:
+  - ✅ `FROM python:3.12-slim`
+  - ✅ `WORKDIR /app`
+  - ✅ `COPY requirements.txt .`
+  - ✅ `RUN pip install --no-cache-dir -r requirements.txt`
+  - ✅ `COPY src/ .`
+  - ✅ `EXPOSE 8080`
+  - ✅ `CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]`
+- ✅ `docker build -t shopstack-api ./services/api`
+- ✅ `docker images` — confirm shopstack-api exists
+- ✅ `docker history shopstack-api` — read every layer
+- ✅ Add a comment to `main.py` — rebuild — watch pip install use cache
+- ✅ Change `requirements.txt` — rebuild — watch pip install rerun
+- ✅ Understand why: stable layers first, volatile layers last
+- ✅ Write `services/frontend/Dockerfile` from scratch:
+  - ✅ `FROM nginx:1.24-alpine`
+  - ✅ `RUN rm /etc/nginx/conf.d/default.conf`
+  - ✅ `COPY nginx.conf /etc/nginx/conf.d/default.conf`
+  - ✅ `COPY html/ /usr/share/nginx/html/`
+  - ✅ `EXPOSE 80`
+- ✅ `docker build -t shopstack-frontend ./services/frontend`
+- ✅ `docker images` — confirm shopstack-frontend exists
+- ✅ Write `services/worker/Dockerfile` from scratch — multi-stage:
+  - ✅ `FROM golang:1.22-alpine AS builder`
+  - ✅ `WORKDIR /build`
+  - ✅ `COPY go.mod .`
+  - ✅ `RUN go mod download`
+  - ✅ `COPY . .`
+  - ✅ `ARG TARGETARCH`
+  - ✅ `RUN CGO_ENABLED=0 GOOS=linux GOARCH=${TARGETARCH} go build -o worker .`
+  - ✅ `FROM alpine:3.19`
+  - ✅ `RUN apk --no-cache add ca-certificates`
+  - ✅ `WORKDIR /app`
+  - ✅ `COPY --from=builder /build/worker .`
+  - ✅ `CMD ["./worker"]`
+- ✅ `docker build -t shopstack-worker ./services/worker`
+- ✅ `docker images` — compare shopstack-worker size vs golang:1.22-alpine size
+- ✅ Answer out loud: what is a multi-stage build and why use it?
 
 **Session win condition:** All 3 images build with zero errors. You can explain every line.
 
